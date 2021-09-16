@@ -6,6 +6,8 @@ import com.github.kokorin.jaffree.ffmpeg.FFmpegResult;
 import com.github.kokorin.jaffree.ffmpeg.NullOutput;
 import com.github.kokorin.jaffree.ffmpeg.ProgressListener;
 import com.github.kokorin.jaffree.ffmpeg.UrlInput;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 
 /*
  * Created by Eldevan Nery Junior on 14/09/2021 11:13
@@ -26,7 +28,7 @@ public class Main {
                     }
                 })
                 .execute();
-
+        new ConverterController();
         System.out.println("Exact duration: " + durationMillis.get() + " Min");
     }
 }

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="805.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ConverterController">
+   <children>
+      <VBox layoutX="-3.0" prefHeight="392.0" prefWidth="795.0">
+         <children>
+            <Separator prefWidth="200.0">
+               <VBox.margin>
+                  <Insets bottom="1.0" />
+               </VBox.margin>
+            </Separator>
+            <HBox prefHeight="40.0" prefWidth="600.0">
+               <children>
+                  <Hyperlink fx:id="fileName" onAction="#actionSelectFile" prefHeight="24.0" prefWidth="397.0" text="Selecionar Arquivo" />
+                  <Button fx:id="btnFile" mnemonicParsing="false" onAction="#actionSelectFile">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="FOLDER_OPEN" />
+                     </graphic>
+                  </Button>
+                  <Label fx:id="duracaoLbl" prefHeight="24.0" prefWidth="143.0" text="Duraçao: 00:00:00" />
+                  <Label fx:id="tamanhoLbl" layoutX="439.0" layoutY="10.0" prefHeight="23.0" prefWidth="143.0" text="Tamanho:00MB" />
+               </children>
+            </HBox>
+            <TableView prefHeight="323.0" prefWidth="795.0" fx:id="files">
+              <columns>
+                <TableColumn fx:id="arquivoColumn" prefWidth="380.0" text="Arquivo(s)" />
+                <TableColumn fx:id="duracaoColumn" prefWidth="137.0" text="Duraçao" />
+                  <TableColumn fx:id="tamanhoColumn" prefWidth="142.0" text="Tamanho" />
+              </columns>
+            </TableView>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="24.0" prefWidth="147.0" text="Duracao :" />
+                  <TextField fx:id="duracaoTextField">
+                     <tooltip>
+                        <Tooltip text="Digite a duração em minutos a ser dividido o vídeo" />
+                     </tooltip>
+                  </TextField>
+                  <Label prefHeight="22.0" prefWidth="28.0" text="Min." />
+                  <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="24.0" prefWidth="140.0" text="Tamanho :" />
+                  <TextField fx:id="tamanhoTextField" layoutX="75.0" layoutY="10.0">
+                     <tooltip>
+                        <Tooltip text="Digite o tamanho em MB p/ dividiro vídeo" />
+                     </tooltip>
+                  </TextField>
+                  <Label layoutX="328.0" layoutY="10.0" prefHeight="22.0" prefWidth="28.0" text="MB" />
+               </children>
+            </HBox>
+            <ToolBar prefHeight="3.0" prefWidth="795.0">
+              <items>
+                <Button fx:id="splitBtn" mnemonicParsing="false" onAction="#actionSplit" text="Dividir arquivo" />
+              </items>
+            </ToolBar>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
