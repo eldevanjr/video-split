@@ -138,7 +138,7 @@ public class ConverterController extends Application {
 
         chooser.setInitialDirectory(selectedDirectory);
         FileChooser.ExtensionFilter extFilter = new FileChooser
-                .ExtensionFilter("Vídeos", "*.mp4", "*.avi", "*.mkv", "*.mts");
+                .ExtensionFilter("Vídeos", "*.mp4", "*.avi", "*.mkv", "*.mts", "*.mov");
         chooser.getExtensionFilters().add(extFilter);
         chooser.getExtensionFilters().add(new FileChooser
                 .ExtensionFilter("Todos os Arquivos", "*.*"));
